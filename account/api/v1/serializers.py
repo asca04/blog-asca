@@ -4,13 +4,14 @@ from django.contrib.auth import get_user_model, authenticate
 
 User = get_user_model()
 
+
 class UserCreateSerializer(serializers.ModelSerializer):
     password1 = serializers.CharField(max_length=128, write_only=True)
     password2 = serializers.CharField(max_length=128, write_only=True)
+
     class Meta:
         model = User
         fields = ('phone', 'password1', 'password2')
-
 
     def validate(self, attrs):
         if attrs['password1'] != attrs['password2']:

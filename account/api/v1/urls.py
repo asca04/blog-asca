@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import UserCreateAPIView, CustomAuthToken
+from account.api.v1.generic_views import UserCreateAPIView, CustomAuthToken
 
 urlpatterns = [
     path('create', UserCreateAPIView.as_view(), name='user_create'),
