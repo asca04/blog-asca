@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     'account.apps.AccountConfig',
     'drf_yasg',
-    'django.contrib.staticfiles'
 
     # OAuth
     'oauth2_provider',
@@ -91,14 +90,21 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config['NAME'],
-        'USER': config['USER'],
-        'PASSWORD': config['PASSWORD'],
-        'HOST': config['HOST'],
-        'PORT': config['PORT']
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': config['NAME'],
+#         'USER': config['USER'],
+#         'PASSWORD': config['PASSWORD'],
+#         'HOST': config['HOST'],
+#         'PORT': config['PORT']
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -137,8 +143,6 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
