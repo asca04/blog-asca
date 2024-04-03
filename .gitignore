@@ -3,3 +3,6 @@
 /.idea
 db.sqlite3
 media
+.env
+.db.env
+.prod.db.env
